@@ -24,7 +24,7 @@ mongoose.connect(process.env.DATABASE_URL || "https://localhost:3000",{
     useNewUrlParser: true
 })
 const db = mongoose.connection
-db.on('error', error => console.log("This is THE FUCKING ERROR"+error))
+db.on('error', error => console.log("ERROR "+error))
 db.once('open', () => console.log("Connected to Mongoose"))
 
 app.use('/', indexRouter);
